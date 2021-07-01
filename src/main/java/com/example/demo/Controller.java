@@ -1,8 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.entity.Wells;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -12,7 +11,8 @@ import java.io.StringReader;
 @RestController
 public class Controller {
 
-    @GetMapping("/fuck")
+    @RequestMapping(value = "/fuck", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
     public Wells getObject() {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
                 "\n" +

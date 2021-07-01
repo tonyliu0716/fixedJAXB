@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.UUID;
 
 public class Well {
@@ -20,7 +21,7 @@ public class Well {
     private WaterDepth waterDepth;
     private CommonData commonData;
     private CustomData customData;
-    private UUID uid;
+    private String uid;
     private WellLocation wellLocation;
 
     public String getName() { return name; }
@@ -71,8 +72,10 @@ public class Well {
     public CustomData getCustomData() { return customData; }
     public void setCustomData(CustomData value) { this.customData = value; }
 
-    public UUID getUid() { return uid; }
-    public void setUid(UUID value) { this.uid = value; }
+    public String getUid() { return uid; }
+
+    @XmlAttribute
+    public void setUid(String value) { this.uid = value; }
 
     public WellLocation getWellLocation() { return wellLocation; }
     public void setWellLocation(WellLocation value) { this.wellLocation = value; }
